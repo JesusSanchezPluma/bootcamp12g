@@ -1,0 +1,63 @@
+/* Selector universal (Van con *)
+selecciona todos los elementos de mi html */
+
+*{
+    font-family: arial;
+}
+
+/* Selector por tagname (Van con el nombre del tag)
+Selecciona todos los elementos cuyo tagname sea igual
+al declarado */
+
+header{
+    padding: 15px;
+    background-color: cyan;
+}
+
+nav{
+    padding:15px;
+    background-color: plum;
+}
+
+section{
+    padding:15px;
+    background-color: blue;
+    height:300px;
+}
+
+article{
+    padding:15px;
+    background-color: pink;
+}
+
+aside{
+    padding:15px;
+    background-color: lightcoral;
+    height:300px;
+}
+
+footer{
+    padding:15px;
+    background-color: lightsteelblue;
+}
+
+/* Selector por clase (Van con .)
+selecciona todos los elementos que tengan el nombre 
+de la clase en su atributo class*/
+
+.greenyellow-button{
+    background-color: greenyellow;
+}
+
+.lightcoral-button{
+    background-color: lightcoral;
+}
+
+
+/* Selector por id (Van con #) 
+Selecciona el único elemento que coincida con el id indicado*/
+
+#main-title{
+    font-weight: bold;
+    text-transform: uppercase;
+}
