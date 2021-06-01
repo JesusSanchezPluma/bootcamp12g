@@ -1,0 +1,21 @@
+body{
+    width:vw;
+    height:vh;
+}
+
+.red-wrapper{
+    position:absolute;
+    width:300px;
+    height:300px;
+    border: solid 1px red;
+    background-color: red;
+}
+
+.cyan-square{
+    position:absolute;
+    width:300px;
+    height:300px;
+    top:100px;
+    left:100px;
+    background-color:cyan;
+}

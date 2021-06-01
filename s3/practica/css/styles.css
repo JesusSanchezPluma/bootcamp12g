@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --espacio:18.99999%;
+}
+
+body{
+    background-color:black;    
+}
+.father{
+    position:relative;
+    width: 50vw;
+    height: 50vh;
+    background-color:hsl(84, 100%, 59%);
+    padding: 3px;
+    margin: 25vh auto;
+}
+
+.circle{
+    width: var(--espacio);
+    height: var(--espacio);
+    background-color:blue;
+    border-radius: 50%;
+}
+
+.rounded{
+    width: var(--espacio);
+    height: var(--espacio);
+    border-radius: 15%;
+}
+
+.sup{
+    position:absolute;
+    top: 20px;
+    left: calc(50% - (var(--espacio)/2));
+}
+.der{
+    position:absolute;
+    right: 20px;
+    top: calc(50% - (var(--espacio)/2));
+}
+.inf{
+    position:absolute;
+    bottom:20px;
+    left: calc(50% - (var(--espacio)/2));
+}
+.izq{
+    position:absolute;
+    left: 20px;
+    top: calc(50% - (var(--espacio)/2));
+}
+
+.square{
+    width: var(--espacio);
+    height: var(--espacio);
+    background-color:red;
+    position:absolute;
+    left: calc(50% - 
+    (var(--espacio)/2));
+    top: calc(50% - 
+    (var(--espacio)/2));
+}
+
+.supleft{
+    width: var(--espacio);
+    height: var(--espacio);
+    background-color:rgb(255, 0, 170);
+    position:absolute;
+    left: 20px;
+    top: 20px;
+}
+.supright{
+    width: var(--espacio);
+    height: var(--espacio);
+    background-color:rgb(255, 0, 170);
+    position:absolute;
+    right: 20px;
+    top: 20px;
+}
+.infleft{
+    width: var(--espacio);
+    height: var(--espacio);
+    background-color:rgb(255, 0, 170);
+    position:absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.infright{
+    width: var(--espacio);
+    height: var(--espacio);
+    background-color:rgb(255, 0, 170);
+    position:absolute;
+    right: 20px;
+    bottom: 20px;
+}
