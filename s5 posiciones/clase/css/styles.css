@@ -1,21 +1,25 @@
-body{
-    width:vw;
-    height:vh;
+.figura{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transition: all 2s ease;
 }
 
-.red-wrapper{
-    position:absolute;
-    width:300px;
-    height:300px;
-    border: solid 1px red;
-    background-color: red;
+form input#square:checked ~ .figura{
+    height: 100px;
+    Width:100px;
+    border: solid 2px red;
 }
 
-.cyan-square{
-    position:absolute;
-    width:300px;
-    height:300px;
-    top:100px;
-    left:100px;
-    background-color:cyan;
+form input#rectangle:checked ~ .figura{
+    height: 100px;
+    Width:200px;
+    border: solid 2px purple;
+}
+
+form input#circle:checked ~ .figura{
+    height: 100px;
+    Width:100px;
+    border-radius: 100%;
+    border: solid 2px pink;
 }

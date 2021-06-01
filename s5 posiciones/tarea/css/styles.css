@@ -1,0 +1,32 @@
+@keyframes full-rotation{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.figura{
+    width:100px;
+    height: 10px;
+    border: 1px solid red;    
+    background-color:yellow;
+}
+
+form #wow::after{
+    position:absolute;
+    left:30px;
+}
+
+form #wow:not(:checked)::after{
+    content:"Activar animación";
+}
+
+form #wow:checked::after{
+    content:"Desactivar animación";
+}
+
+form #wow:checked ~ .figura{
+    animation: full-rotation 2s infinite linear;
+}
