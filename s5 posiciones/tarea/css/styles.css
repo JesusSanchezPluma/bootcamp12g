@@ -30,3 +30,60 @@ form #wow:checked::after{
 form #wow:checked ~ .figura{
     animation: full-rotation 2s infinite linear;
 }
+
+.reloj{
+    position:relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    border: 1px solid black;    
+    background-color:brown;
+}
+.minutero{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:140px;
+    height: 1px;
+    border: 1px solid red;    
+    background-color:yellow;
+    transform-origin: 0% 0%;
+}
+.hora{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:70px;
+    height: 1px;
+    border: 1px solid red;    
+    background-color:pink;
+    transform-origin: 0% 0%;
+}
+
+form #T1200:checked ~ .reloj .minutero{
+    transform:rotate(-90deg);
+}
+form #T1200:checked ~ .reloj .hora{
+    transform:rotate(-90deg);
+}
+
+form #T0630:checked ~ .reloj .minutero{
+    transform:rotate(90deg);
+}
+form #T0630:checked ~ .reloj .hora{
+    transform:rotate(90deg);
+}
+
+form #T0915:checked ~ .reloj .minutero{
+    transform:rotate(0deg);
+}
+form #T0915:checked ~ .reloj .hora{
+    transform:rotate(180deg);
+}
+
+form #T0345:checked ~ .reloj .minutero{
+    transform:rotate(180deg);
+}
+form #T0345:checked ~ .reloj .hora{
+    transform:rotate(0deg);
+}
