@@ -37,7 +37,7 @@ form #wow:checked ~ .figura{
     height: 300px;
     border-radius: 100%;
     border: 1px solid black;    
-    background-color:brown;
+    background-color:lightgrey;
 }
 .minutero{
     position:absolute;
@@ -48,6 +48,7 @@ form #wow:checked ~ .figura{
     border: 1px solid red;    
     background-color:yellow;
     transform-origin: 0% 0%;
+    transition: all 2s ease;
 }
 .hora{
     position:absolute;
@@ -58,6 +59,7 @@ form #wow:checked ~ .figura{
     border: 1px solid red;    
     background-color:pink;
     transform-origin: 0% 0%;
+    transition: all 2s ease;
 }
 
 form #T1200:checked ~ .reloj .minutero{
