@@ -1,0 +1,56 @@
+/*Mobile First
+La gran parte del contenido es consumido
+en dispositivos moviles */
+
+.element{
+    width:100px;
+    height: 100px;
+    background-color: peru;
+    transition: all .5s ease;
+}
+
+.contenedor{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.objeto1{
+    background-color: red;
+    border-color: blue 1px;
+    width:100px;
+    height:100px;
+}
+.objeto2{
+    background-color: orange;
+    width:100px;
+    height:100px;
+}
+.objeto3{
+    background-color: grey;
+    width:100px;
+    height:100px;
+}
+
+/*Tablet media query*/
+@media only screen and (min-width:700px){
+    .contenedor{
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+        align-items: flex-start;
+    }
+}
+
+/*Desktop media query*/
+@media only screen and (min-width:1200px){
+    .contenedor{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    .contenedor *[class^="objeto"]{
+        height: unset;
+    }
+}

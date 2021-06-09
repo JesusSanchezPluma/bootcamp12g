@@ -1,0 +1,89 @@
+$bright-orange: hsl(31, 77%, 52%);
+$dark-cyan: hsl(184, 100%, 22%);
+$very-dark-cyan: hsl(179, 100%, 13%);
+$title-font: 'Big Shoulders Display', cursive;
+$content-font: 'Lexend', sans-serif;
+$pad: 40px;
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    main{
+        width:  320px;
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color:white;
+        div img{
+            width:80px;
+        }
+        div.categories1{
+            background-color: $bright-orange;
+            padding: $pad;
+            height: 340px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            h1{
+                font-family: $title-font;
+            }
+            p{
+                font-family:$content-font;
+                color:hsla(0, 0%, 100%, 0.75);
+            }
+        }
+        div.categories2{
+            background-color: $dark-cyan;
+            padding: $pad;
+            height: 340px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            h1{
+                font-family: $title-font;
+            }
+            p{
+                font-family:$content-font;
+                color:hsla(0, 0%, 100%, 0.75);
+            }
+        }
+        div.categories3{
+            background-color: $very-dark-cyan;
+            padding: $pad;
+            height: 340px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            h1{
+                font-family: $title-font;
+            }
+            p{
+                font-family:$content-font;
+                color:hsla(0, 0%, 100%, 0.75);
+            }
+        }
+        div button{
+            width: 120px;
+            height: 40px;
+            border-radius: 20px;
+        }
+        div button.font-colors1{
+            color:  $bright-orange;
+            border: $bright-orange 1px solid;
+        }
+        div button.font-colors2{
+            color:  $dark-cyan;
+            border: $dark-cyan 1px solid;
+        }
+        div button.font-colors3{
+            color:  $very-dark-cyan;
+            border: $very-dark-cyan 1px solid;
+        }
+    }
+}
+
+

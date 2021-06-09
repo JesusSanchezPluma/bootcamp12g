@@ -1,0 +1,132 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main {
+  width: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+}
+
+body main div img {
+  width: 80px;
+}
+
+body main div.categories1 {
+  background-color: #e38826;
+  padding: 40px;
+  height: 340px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body main div.categories1 h1 {
+  font-family: "Big Shoulders Display", cursive;
+}
+
+body main div.categories1 p {
+  font-family: "Lexend", sans-serif;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+body main div.categories2 {
+  background-color: #006970;
+  padding: 40px;
+  height: 340px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body main div.categories2 h1 {
+  font-family: "Big Shoulders Display", cursive;
+}
+
+body main div.categories2 p {
+  font-family: "Lexend", sans-serif;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+body main div.categories3 {
+  background-color: #004241;
+  padding: 40px;
+  height: 340px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body main div.categories3 h1 {
+  font-family: "Big Shoulders Display", cursive;
+}
+
+body main div.categories3 p {
+  font-family: "Lexend", sans-serif;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+body main div button {
+  width: 120px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+body main div button.font-colors1 {
+  color: #e38826;
+  border: #e38826 1px solid;
+}
+
+body main div button.font-colors2 {
+  color: #006970;
+  border: #006970 1px solid;
+}
+
+body main div button.font-colors3 {
+  color: #004241;
+  border: #004241 1px solid;
+}
+/*# sourceMappingURL=styles.css.map */
