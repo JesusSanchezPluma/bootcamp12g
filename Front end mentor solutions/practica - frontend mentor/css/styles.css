@@ -1,0 +1,39 @@
+.fuente1 {
+  font-family: "Spartan", sans-serif;
+}
+
+.morado-mob {
+  color: #502050;
+  font-weight: bold;
+  font-size: 35px;
+  letter-spacing: -2px;
+  line-height: 35px;
+}
+
+.gris-mob {
+  color: #937b92;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.moradito2 {
+  color: #502050;
+  font-weight: bold;
+  font-size: 10.5px;
+}
+
+.grisesito {
+  color: #937b92;
+  font-weight: bold;
+  font-size: 10.5px;
+}
+
+.bgstars {
+  background-color: lightgray;
+}
+
+.aya {
+  width: 90vw;
+}
+/*# sourceMappingURL=styles.css.map */
