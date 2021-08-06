@@ -1,6 +1,8 @@
-const { response } = require("express");
+const { response, json } = require("express");
 const express = require("express");
 const fs = require('fs');
+const { request } = require("http");
+const { parse } = require("path");
 
 // para tener acceso al server se tiene que instanciar express
 
@@ -126,5 +128,68 @@ server.post('/koders', async (request,response) => {
             koder: newKoder
         }
     })
-
 })
+
+server.patch('/koders/:id', async ( request, response ) => {
+    const { id } = request.params;
+    const { name, generation } = request.body;
+
+    const content = await readFilePromise('kodemia.json');
+
+    const updatedkoder = content.koders.map( (item) => {
+        if(item.id === parseInt(id)){
+            item.name = name;
+            item.generation =  generation;
+            //koder={...koder, name, generation};
+        }
+        return item
+    })
+
+    content.koders = updatedkoder;
+
+    fs.writeFileSync('kodemia.json',JSON.stringify(content,null,4),'utf8');
+
+    response.json({
+        success: true,
+        message: "Se actualizo con éxito",
+        data:{
+            updatedkoder
+        }
+    })
+})
+
+// Practica:
+// GET /koders/:id
+// DELETE /koders/:id
+
+server.get('/koders/:id', async (request, response) => {
+    const { id } = request.params;
+    const content = await readFilePromise('kodemia.json');
+    const getKoderById = content.koders.filter( (item) => {
+        return (item.id === parseInt(id)) && item.id
+    })
+    response.json({
+        success: true,
+        message: "se mostrará solo un Koder",
+        data:{
+            getKoderById
+        }
+    })
+})
+
+server.delete('/koders/:id', async ( request, response ) => {
+    const { id } = request.params;
+    const content = await readFilePromise('kodemia.json');
+
+    content.koders = content.koders.filter( koder => {
+        return koder.id != parseInt(id)
+    })
+
+    fs.writeFileSync('kodemia.json',JSON.stringify(content,null,4),'utf8');
+
+    response.json({
+        success: true,
+        message: "Se borro con exito",
+    })
+})
+
