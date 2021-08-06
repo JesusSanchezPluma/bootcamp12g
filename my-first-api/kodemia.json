@@ -19,9 +19,21 @@
         {
             "name": "Cintia",
             "generation": 10
+        },
+        {
+            "name": "YISUS",
+            "generation": 12
+        },
+        {
+            "name": "Jose",
+            "generation": 999
+        },
+        {
+            "name": "Yadira",
+            "generation": 666
         }
     ],
-    "mentors":[
+    "mentors": [
         {
             "name": "Isra",
             "module": "Maquetado"
@@ -31,7 +43,7 @@
             "module": "backend"
         },
         {
-            "name": "oso",
+            "name": "Oso",
             "module": "hello Koders"
         },
         {

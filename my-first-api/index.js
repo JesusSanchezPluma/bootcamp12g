@@ -64,12 +64,13 @@ server.listen( 8080, ( ) => {
 // GET / koders ->
 // POST /mentors ->
 
-// Esta petición sirve para imprimir un objeto que viene de un JSON 
-server.get('/koders', (require,response) => {
-    response.status(201).json(objectKodemia);
-})
+// Esta petición sirve para imprimir un objeto que viene de un JSON}
 
-server.post('/koders', ( require, response ) => {
+/* server.get('/koders', (require,response) => {
+    response.status(201).json(objectKodemia);
+}) */
+
+/* server.post('/koders', ( require, response ) => {
     var newKoder = {
         "name":"YISUS",
         "generation":12
@@ -83,5 +84,47 @@ server.post('/koders', ( require, response ) => {
     console.log( "readJSON:", readJson );
     console.log( "updateJSON:", updateJson );
     response.status(201).json(readJson);
-}) 
+})  */
 
+///////////
+function readFilePromise(pathToRead) {
+    return new Promise ( ( resolve, reject ) => {
+        fs.readFile( pathToRead, 'utf8', ( error, content ) => {
+            if (error) {
+                reject (error);
+            } else {
+                const json = JSON.parse( content );
+                resolve( json );
+            }
+        })
+    })
+}
+
+server.get('/koders', async ( request, response ) => {
+    const content = await readFilePromise('kodemia.json');
+    response.status(200).json({
+        success: true,
+        message: 'All koders',
+        data: {
+            koders: content.koders
+        }
+    })
+})
+
+server.post('/koders', async (request,response) => {
+    const newKoder = request.body;
+    const content = await readFilePromise('Kodemia.json');
+
+    content.koders.push(newKoder); // se agrega lo recibido en el body de la request
+
+    fs.writeFileSync('kodemia.json',JSON.stringify(content, null, 4),'utf8');
+
+    response.json({ // esto es la respuesta 
+        success: true,
+        message: 'Koder Added',
+        data: {
+            koder: newKoder
+        }
+    })
+
+})
