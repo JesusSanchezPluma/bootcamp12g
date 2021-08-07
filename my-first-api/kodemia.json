@@ -3,54 +3,85 @@
         {
             "id": 1,
             "name": "Carlos Velasquez",
-            "generation": 12
+            "generation": 12,
+            "gender": "m"
         },
         {
             "id": 2,
             "name": "Juan Pi",
-            "generation": 10
+            "generation": 10,
+            "gender": "m"
         },
         {
             "id": 4,
             "name": "Panfilo",
-            "generation": 656
+            "generation": 656,
+            "gender": "m"
         },
         {
             "id": 5,
             "name": "Cintia",
-            "generation": 10
+            "generation": 10,
+            "gender": "f"
         },
         {
             "id": 6,
             "name": "YISUS",
-            "generation": 12
+            "generation": 12,
+            "gender": "m"
         },
         {
             "id": 7,
             "name": "Jose",
-            "generation": 999
+            "generation": 999,
+            "gender": "m"
         },
         {
             "id": 8,
             "name": "Yessenia",
-            "generation": 101
+            "generation": 101,
+            "gender": "f"
         }
     ],
     "mentors": [
         {
+            "id": 1,
             "name": "Isra",
             "module": "Maquetado"
         },
         {
+            "id": 2,
+            "name": "Isra",
+            "module": "JavaScript"
+        },
+        {
+            "id": 3,
+            "name": "Isra",
+            "module": "Backend"
+        },
+        {
+            "id": 4,
+            "name": "Alfred",
+            "module": "Backend"
+        },
+        {
+            "id": 5,
+            "name": "Charles",
+            "module": "Backend"
+        },
+        {
+            "id": 6,
             "name": "Fernanda",
-            "module": "backend"
+            "module": "Backend"
         },
         {
+            "id": 7,
             "name": "Oso",
-            "module": "hello Koders"
+            "module": "Hello Koders"
         },
         {
-            "name": "Mel",
+            "id": 8,
+            "name": "Mels",
             "module": "Hello Koders"
         }
     ]

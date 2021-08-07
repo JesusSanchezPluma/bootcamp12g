@@ -1,23 +1,21 @@
-const { response, json } = require("express");
 const express = require("express");
-const fs = require('fs');
-const { request } = require("http");
-const { parse } = require("path");
+const kodersRouter =  require('./routers/koders');
+const mentorsRouter = require('./routers/mentors');
 
 // para tener acceso al server se tiene que instanciar express
-
 const server = express();
-
-// SE tiene que pasar a JSON por que el fs lo trae como string
-var objectKodemia = JSON.parse(fs.readFileSync('./kodemia.json'));
-
-console.log( 'objeto: ', objectKodemia.koders );
 
 //middleware
 server.use( express.json() );
+server.use( '/koders', kodersRouter );
+server.use( '/mentors', mentorsRouter );
+
+server.listen( 8080, ( ) => {
+    console.log('listening on port 8080');
+});
+
 
 // Peticiones
-
 server.get('/', ( request, response ) => {
     response.write('Hello world from inside express');
     response.end();
@@ -29,23 +27,19 @@ server.get('/', ( request, response ) => {
     })
 }); */
 
-server.get('/mentors', ( request, response ) => {
+/* server.get('/mentors', ( request, response ) => {
     response.setHeader('Content-Type', 'application/json');
     const objMentors = {mentor1: 'name', mentor2: 'name2'};
     response.write(JSON.stringify(objMentors));
     response.end();
-})
+}) */
 
-server.post('/mentors', ( request, response ) => {
+/* server.post('/mentors', ( request, response ) => {
     response.setHeader('Content-Type', 'application/json');
     const objMentorsPost = {anotgherMentor1: 'name', anotherMentor2: 'name2'};
     response.write(JSON.stringify(objMentorsPost));
     response.end();
-})
-
-server.listen( 8080, ( ) => {
-    console.log('listening on port 8080');
-});
+}) */
 
 /* server.post('/koders', ( request, response ) => {
     
@@ -56,15 +50,6 @@ server.listen( 8080, ( ) => {
         message: 'Aqui se creará un koder'
     });
 }) */
-
-// en ruta mentors
-// GET /mentors -> un JSON
-// POST /mentors -> un JSON
-
-// fs + express
-// leer del archivo kodemia.json y regresar los koders desde un metodo GET /koders
-// GET / koders ->
-// POST /mentors ->
 
 // Esta petición sirve para imprimir un objeto que viene de un JSON}
 
@@ -88,21 +73,7 @@ server.listen( 8080, ( ) => {
     response.status(201).json(readJson);
 })  */
 
-///////////
-function readFilePromise(pathToRead) {
-    return new Promise ( ( resolve, reject ) => {
-        fs.readFile( pathToRead, 'utf8', ( error, content ) => {
-            if (error) {
-                reject (error);
-            } else {
-                const json = JSON.parse( content );
-                resolve( json );
-            }
-        })
-    })
-}
-
-server.get('/koders', async ( request, response ) => {
+/* server.get('/koders', async ( request, response ) => {
     const content = await readFilePromise('kodemia.json');
     response.status(200).json({
         success: true,
@@ -111,85 +82,11 @@ server.get('/koders', async ( request, response ) => {
             koders: content.koders
         }
     })
-})
+}) */
 
-server.post('/koders', async (request,response) => {
-    const newKoder = request.body;
-    const content = await readFilePromise('Kodemia.json');
-
-    content.koders.push(newKoder); // se agrega lo recibido en el body de la request
-
-    fs.writeFileSync('kodemia.json',JSON.stringify(content, null, 4),'utf8');
-
-    response.json({ // esto es la respuesta 
-        success: true,
-        message: 'Koder Added',
-        data: {
-            koder: newKoder
-        }
-    })
-})
-
-server.patch('/koders/:id', async ( request, response ) => {
-    const { id } = request.params;
-    const { name, generation } = request.body;
-
-    const content = await readFilePromise('kodemia.json');
-
-    const updatedkoder = content.koders.map( (item) => {
-        if(item.id === parseInt(id)){
-            item.name = name;
-            item.generation =  generation;
-            //koder={...koder, name, generation};
-        }
-        return item
-    })
-
-    content.koders = updatedkoder;
-
-    fs.writeFileSync('kodemia.json',JSON.stringify(content,null,4),'utf8');
-
+/* server.get('/', (request, response) => {
     response.json({
-        success: true,
-        message: "Se actualizo con éxito",
-        data:{
-            updatedkoder
-        }
+        success:true,
+        message: ""
     })
-})
-
-// Practica:
-// GET /koders/:id
-// DELETE /koders/:id
-
-server.get('/koders/:id', async (request, response) => {
-    const { id } = request.params;
-    const content = await readFilePromise('kodemia.json');
-    const getKoderById = content.koders.filter( (item) => {
-        return (item.id === parseInt(id)) && item.id
-    })
-    response.json({
-        success: true,
-        message: "se mostrará solo un Koder",
-        data:{
-            getKoderById
-        }
-    })
-})
-
-server.delete('/koders/:id', async ( request, response ) => {
-    const { id } = request.params;
-    const content = await readFilePromise('kodemia.json');
-
-    content.koders = content.koders.filter( koder => {
-        return koder.id != parseInt(id)
-    })
-
-    fs.writeFileSync('kodemia.json',JSON.stringify(content,null,4),'utf8');
-
-    response.json({
-        success: true,
-        message: "Se borro con exito",
-    })
-})
-
+}) */
