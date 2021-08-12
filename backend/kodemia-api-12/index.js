@@ -9,10 +9,10 @@ const dbConnect = require('./src/lib/db');
 
 dbConnect()
     .then(() => {
-        console.log('Batabase connected')
+        console.log('Batabase connected... ');
+        server.listen(8080, () => {
+            console.log("Server listening... ");
+        })
     })
     .catch(err => console.error(err))
 
-server.listen(8080, () => {
-    console.log("Server listening... ");
-})
