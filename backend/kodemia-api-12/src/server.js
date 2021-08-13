@@ -2,6 +2,7 @@
 
 const express =  require('express');
 const kodersRouter = require('./routers/koders');
+const mentorsRouter = require('./routers/mentors');
 const server = express();
 
 // middlewares
@@ -9,6 +10,7 @@ server.use( express.json() );
 
 // routers
 server.use( '/koders', kodersRouter );
+server.use( '/mentors', mentorsRouter );
 
 module.exports = server;
 
@@ -33,10 +35,12 @@ module.exports = server;
 // name
 // LastName
 // module: ['Maquetado', 'JS', 'Cloud', 'Backend', 'React']
+// gender: 
 
 /* {
     "name": "Fernanda",
     "LastName":"Palacios",
+    "gender": "f",
     "module": ['Maquetado', 'Backend']
 }
  */
@@ -46,3 +50,14 @@ module.exports = server;
 // Es un grupo de mentores que pueden ser asignados a un grupo
 // Tiene un nombre que lo identifica
 // Tiene que mentores pertenecen a dicha celula
+
+
+// --- MiddleWares
+
+// Crear un middleware que muestre en la terminal las peticiones
+// que se van realizando
+
+// [METHOD] [ruta] [body]
+
+// GET /koders {}
+// POST /koders {...}
