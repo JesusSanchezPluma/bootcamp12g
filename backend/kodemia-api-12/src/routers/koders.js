@@ -26,12 +26,12 @@ router.get('/', async ( request, response ) =>{
 router.post('/', async ( request, response ) => {
     try {
         const koderData = request.body;
-        const koderCreated = await koders.koderCreated( koderData );
+        const koderCreated = await koders.create( koderData );
         response.json({
             success:true,
             message: 'koder created',
             data: {
-                koder: koderCreated
+                koderCreated
             }
         })
     } 
@@ -44,7 +44,6 @@ router.post('/', async ( request, response ) => {
         })
     }
 })
-
 
 router.delete('/:id', async ( request, response ) => {
     try {
