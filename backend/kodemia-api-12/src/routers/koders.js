@@ -1,8 +1,9 @@
 const express = require('express');
 const koders = require('../usecases/koders');
 const router = express.Router();
+const isAuth = require('../middlewares/auth')
 
-router.get('/', async ( request, response ) =>{
+router.get('/', isAuth, async ( request, response ) =>{
     try{
         const allKoders = await koders.getAll();
         response.json({

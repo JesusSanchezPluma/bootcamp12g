@@ -3,6 +3,8 @@
 const express =  require('express');
 const kodersRouter = require('./routers/koders');
 const mentorsRouter = require('./routers/mentors');
+const authRouter =  require('./routers/auth');
+
 const server = express();
 
 // middlewares
@@ -11,6 +13,7 @@ server.use( express.json() );
 // routers
 server.use( '/koders', kodersRouter );
 server.use( '/mentors', mentorsRouter );
+server.use( '/auth', authRouter );
 
 module.exports = server;
 
