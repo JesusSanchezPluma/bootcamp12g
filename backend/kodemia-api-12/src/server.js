@@ -1,6 +1,8 @@
 // Definición y creación de nuestro servidor
 
 const express =  require('express');
+const cors = require('cors');
+
 const kodersRouter = require('./routers/koders');
 const mentorsRouter = require('./routers/mentors');
 const authRouter =  require('./routers/auth');
@@ -8,6 +10,7 @@ const authRouter =  require('./routers/auth');
 const server = express();
 
 // middlewares
+server.use(cors());
 server.use( express.json() );
 
 // routers
