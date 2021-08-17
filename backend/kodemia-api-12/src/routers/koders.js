@@ -5,6 +5,7 @@ const isAuth = require('../middlewares/auth')
 
 router.get('/', isAuth, async ( request, response ) =>{
     try{
+        console.log('UseCurrent:', request.userCurrent)
         const allKoders = await koders.getAll();
         response.json({
             success: true,

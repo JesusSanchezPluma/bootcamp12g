@@ -4,9 +4,9 @@ const jwt = require('../lib/jwt');
 function auth ( request, response, next) {
     try {
         const { authorization: token } = request.headers;
-        const isValidToken = jwt.verify( token );
-        if( !isValidToken ) throw new Error('Not Authorized');  /* Si ocurre un error hasta aqui llega */
-
+        const decodedToken = jwt.verify( token );
+        if( !decodedToken ) throw new Error('Not Authorized');  /* Si ocurre un error hasta aqui llega */
+        request.userCurrent = decodedToken.id;
         next()
 
     } catch (error) {
